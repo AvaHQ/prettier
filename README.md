@@ -1,4 +1,30 @@
-![Prettier Banner](https://raw.githubusercontent.com/prettier/prettier-logo/master/images/prettier-banner-light.png)
+# This is the Ava opiniated fork of Prettier
+
+This is exactly Prettier, with the only difference it formats binary operators at the beginning of new lines instead of the end of the previous line. That's it.
+
+<!-- prettier-ignore -->
+```js
+// prettier:
+const before =
+  value.length >= 2 &&
+  ((value.charCodeAt(0) === 0xff && value.charCodeAt(1) === 0xfe) ||
+    (value.charCodeAt(0) === 0xfe && value.charCodeAt(1) === 0xff));
+
+// @btmills/prettier:
+const after =
+  value.length >= 2
+  && ((value.charCodeAt(0) === 0xff && value.charCodeAt(1) === 0xfe)
+    || (value.charCodeAt(0) === 0xfe && value.charCodeAt(1) === 0xff));
+```
+
+This fork will also allow Ava to further customize the internal use of Prettier with specific rules if needed.
+
+## Pull Requests
+All pull requests must be merged in the `ava` branch, so we can easily rebase it on top of the original prettier repo.
+
+---
+
+![Prettier Banner](https://unpkg.com/prettier-logo@1.0.3/images/prettier-banner-light.svg)
 
 <h2 align="center">Opinionated Code Formatter</h2>
 
